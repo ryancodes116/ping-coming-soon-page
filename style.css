@@ -171,7 +171,7 @@ footer .icons i:hover {
     font-size: 1.3rem;
   }
 
-  .form {
+  /* .form {
     display: flex;
     flex-direction: row;
   }
@@ -182,6 +182,32 @@ footer .icons i:hover {
 
   .form .submitBtn {
     margin-top: 0;
+  } */
+
+  .form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+      'email email submit'
+      'error error error';
+  }
+
+  .form .email {
+    grid-area: email;
+    margin-right: 1rem;
+  }
+
+  .form .submitBtn {
+    grid-area: submit;
+    margin-top: 0;
+  }
+
+  .form .error-message {
+    margin-top: 1rem;
+    grid-area: error;
+    justify-self: start;
+    padding-left: 1.5rem;
   }
 }
 
